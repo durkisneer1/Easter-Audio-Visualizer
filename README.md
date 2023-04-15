@@ -2,7 +2,11 @@
 
 Submission for the Pygame Community Easter Game Jam 2023.
 
-Link -> 
+Controls:
+* Drag-n-drop audio files to load them
+* Spacebar to play loaded audio
+* Q to stop the currently playing audio
+* Esc to close window
 
 Credit:
 
