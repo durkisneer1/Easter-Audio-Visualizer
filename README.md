@@ -6,6 +6,7 @@ Controls:
 * Drag-n-drop audio files to load them
 * Spacebar to play loaded audio
 * Q to stop the currently playing audio
+* R to change the backdrop image
 * Esc to close window
 
 Credit:
