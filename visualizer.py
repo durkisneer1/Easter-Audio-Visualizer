@@ -6,7 +6,7 @@ from particle import Particle
 
 class Visualizer:
     def __init__(self):
-        self.surf = pg.image.load("assets/snek_egg.png").convert_alpha()
+        self.surf = pg.image.load("assets/pg_egg.png").convert_alpha()
         self.scaled_surf = pg.transform.scale_by(self.surf, 0.3)
         self.pos = pg.Vector2(WIN_CENTER)
         self.rect = self.scaled_surf.get_rect(center=self.pos)

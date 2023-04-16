@@ -8,6 +8,8 @@ pg.mixer.pre_init(frequency=SAMPLE_RATE)
 pg.init()
 
 screen = pg.display.set_mode(WIN_SIZE)
+pg.display.set_icon(pg.image.load("assets/pg_egg.png"))
+pg.display.set_caption("Easter Music Visualizer")
 clock = pg.time.Clock()
 
 visual = Visualizer()
@@ -71,7 +73,6 @@ def main():
         screen.blit(tint, (0, 0))
         visual.draw(screen)
 
-        pg.display.set_caption(f"FPS: {clock.get_fps():.2f}")
         pg.display.flip()
 
 
