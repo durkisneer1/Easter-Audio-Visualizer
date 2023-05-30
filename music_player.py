@@ -10,7 +10,7 @@ class MusicPlayer:
         self.snd_array = pg.sndarray.array(self.sound)
         self.length = self.snd_array.size
         self.size = len(self.snd_array)
-
+        self.is_playing = False
         self.start_time = 0
         self.current_time = 0
 
@@ -22,11 +22,13 @@ class MusicPlayer:
         self.sound.stop()
         self.sound.play()
         self.start_time = time.time()
+        self.is_playing = True
 
     def pause(self):
         self.sound.stop()
         self.start_time = 0
         self.current_time = 0
+        self.is_playing = False
 
     def busy(self):
         return pg.mixer.get_busy()
