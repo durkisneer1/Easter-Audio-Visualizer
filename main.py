@@ -31,6 +31,7 @@ def main():
         for ev in events:
             if ev.type == pg.QUIT or (ev.type == pg.KEYDOWN and ev.key == pg.K_ESCAPE):
                 run = False
+
             elif ev.type == pg.KEYDOWN:
                 if ev.key == pg.K_r:
                     bg_index = (bg_index + 1) % 5
@@ -48,7 +49,17 @@ def main():
 
             elif ev.type == pg.DROPFILE:
                 try:
+                    was_playing = False
+                    if cd_player is not None:
+                        was_playing = cd_player.is_playing
+                        cd_player.pause()
+                        visual.clear()
+                        visual.resize()
+
                     cd_player = MusicPlayer(pg.mixer.Sound(ev.file))
+                    if was_playing:
+                        cd_player.play()
+
                 except pg.error:
                     print("Invalid file")
 
